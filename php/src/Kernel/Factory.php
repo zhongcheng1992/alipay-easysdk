@@ -15,6 +15,7 @@ use Alipay\EasySDK\Payment\Common\Client as commonClient;
 use Alipay\EasySDK\Payment\FaceToFace\Client as faceToFaceClient;
 use Alipay\EasySDK\Payment\Huabei\Client as huabeiClient;
 use Alipay\EasySDK\Payment\Page\Client as pageClient;
+use Alipay\EasySDK\Payment\Trans\Client as transClient;
 use Alipay\EasySDK\Payment\Wap\Client as wapClient;
 use Alipay\EasySDK\Security\TextRisk\Client as textRiskClient;
 use Alipay\EasySDK\Util\Generic\Client as genericClient;
@@ -95,6 +96,11 @@ class Factory
     public static function util()
     {
         return self::$util;
+    }
+
+    public function trans()
+    {
+        return new transClient($this->kernel);
     }
 }
 
